@@ -6,7 +6,8 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
+  # Тут ми вручну прописали шлях маленькими літерами
+  IMAGE_NAME: illiavasylenkodb/software_engineering_lab1
 
 jobs:
   build-and-push:
@@ -31,4 +32,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ env.REGISTRY  }}/${{ env.IMAGE_NAME }}:latest
+          # Використовуємо маленькі літери з нашої змінної env
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
